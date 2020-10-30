@@ -8,7 +8,7 @@ import Input from '../components/Input';
 const First = (props) => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
 
   const dispatch = useDispatch();
@@ -16,13 +16,24 @@ const First = (props) => {
     <ScrollView style={{flex: 1, backgroundColor: '#e0e0e0'}}>
       <Text style={{fontSize:25, margin:20}}>First</Text>
 
-      <Input placeholder="enter name.." setUser={(value) => setName(value)} inputValue={name}/>
+      <Input 
+        placeholder="enter name.." 
+        setUser={(value) => setName(value)} 
+        inputValue={name}
+      />
+      
       <Input
         placeholder="enter surname.."
         setUser={(value) => setSurname(value)}
         inputValue={surname}
       />
-      <Input placeholder="enter age.." setUser={(value) => setAge(value)} inputValue={age}/>
+
+      <Input 
+        placeholder="enter age.." 
+        setUser={(value) => setAge(value)} 
+        inputValue={age}
+      />
+
       <Input
         placeholder="enter email.."
         setUser={(value) => setEmail(value)}
