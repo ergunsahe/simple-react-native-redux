@@ -16,16 +16,20 @@ const First = (props) => {
     <ScrollView style={{flex: 1, backgroundColor: '#e0e0e0'}}>
       <Text style={{fontSize:25, margin:20}}>First</Text>
 
-      <Input placeholder="enter name.." setUser={(value) => setName(value)} />
+      <Input placeholder="enter name.." setUser={(value) => setName(value)} inputValue={name}/>
       <Input
         placeholder="enter surname.."
         setUser={(value) => setSurname(value)}
+        inputValue={surname}
       />
-      <Input placeholder="enter age.." setUser={(value) => setAge(value)} />
+      <Input placeholder="enter age.." setUser={(value) => setAge(value)} inputValue={age}/>
       <Input
         placeholder="enter email.."
         setUser={(value) => setEmail(value)}
         keyboardType={'email-address'}
+        inputValue={email}
+        
+        
       />
 
       <View style={{marginVertical: 20, marginHorizontal: 50}}>
@@ -40,8 +44,13 @@ const First = (props) => {
                 newSurname: surname,
                 newAge: age,
                 newEmail: email,
-              },
+              }
             });
+            setName("")
+            setSurname("")
+            setAge("")
+            setEmail("")
+            
           }}
         />
       </View>
